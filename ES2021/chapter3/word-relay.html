@@ -16,8 +16,8 @@
     alert(number);
     const yesOrNo = confirm('맞나요?');
 
-    document.querySelector('input').addEventListener('input', () => {
-      console.log('글자 입력');
+    document.querySelector('input').addEventListener('input', (event) => {
+      console.log('글자 입력', event.target.value);
     });
 
     const onClick = () => {
