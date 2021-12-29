@@ -45,13 +45,17 @@
     const $operator = document.querySelector('#operator');
     const $result = document.querySelector('#result');
     const onClickNumber = (number) => (event) => {
-        if (operator) {
-          numTwo += event.target.textContent;
-        } else {
-          numOne += event.target.textContent;
-        }
+      if (!operator) {
+        numOne += event.target.textContent;
         $result.value += event.target.textContent;
-      }; // 고차함수 (high order function)
+        return;
+      }  
+      if(!numTwo) {
+        $result.value = '';
+      }
+      numTwo += event.target.textContent;
+      $result.value += event.target.textContent;
+    }; // 고차함수 (high order function)
     document.querySelector('#num-0').addEventListener('click', onClickNumber);
     document.querySelector('#num-1').addEventListener('click', onClickNumber);
     document.querySelector('#num-2').addEventListener('click', onClickNumber);
