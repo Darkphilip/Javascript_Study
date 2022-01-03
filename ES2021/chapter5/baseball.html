@@ -25,6 +25,40 @@
       numbers.splice(index, 1);
     }
     console.log(answer);
+
+    const tries = [];
+    function checkInput(input) {
+      if(input.length !== 4) {
+        return alert('4자리 숫자를 입력하세요.');
+      }
+      if (new Set(input).size !== 4 ) {
+        return alert('중복된 값이 존재합니다.');
+      }
+      if (tries.includes(input)) {
+        return alert('이미 시도한 값입니다.');
+      }
+      return true;
+    }
+
+    $form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = $input.value;
+      $input.value = '';
+      if (!checkInput(value)) {
+        return;
+      } 
+      // 입력값 문제없음
+      if (answer.join('') === value) {
+        $logs.textContent = '홈런!';
+        return;
+      } 
+      if (tries.length >= 9) {
+        const message = document.createTextNode(`패배! 정답은 ${answer.join('')}`);
+        $logs.appendChild(message);
+      }
+      // 몇 스트라이크 몇 볼인지 검사
+      tries.push(value);
+    })
   </script>
 </body>
 </html>  
