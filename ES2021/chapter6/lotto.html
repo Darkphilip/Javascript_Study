@@ -30,8 +30,27 @@
       shuffle.push(value);
     }
     console.log(shuffle);
-    const winballs = shuffle.splice(0,6).sort((a,b) => a - b);
+    const winBalls = shuffle.splice(0, 6).sort((a, b) => a - b);
     const bonus  = shuffle[6];
-    console.log(bonus);
+    console.log(winBalls, bonus);
+
+    const $result = document.querySelector('#result');
+    function drawBall(number, $parent) {
+      const $ball = document.createElement('div');
+      $ball.className = 'ball';
+      $ball.textContent = number;
+      $parent.appendChild($ball);
+    }
+
+    for(let i = 0; i < winBalls.length; i++) {  
+      setTimeout(() => {
+        drawBall(winBalls[i], $result);
+      }, 1000 * (i + 1));
+    }
+
+    const $bonus = document.querySelector('#bonus'); 
+    setTimeout(() => {
+      drawBall(bonus, $bonus);
+    }, 7000);
   </script>
 </body>
