@@ -24,25 +24,28 @@
     const rows = [];
     let turn = 'O';
 
+    const callback = (event) => {
+      if (event.target.textContent != '') {
+        console.log('빈칸이 아닙니다.');
+        return;
+      } 
+        console.log('빈칸입니다.');
+        event.target.textContent = turn;
+        turn = (turn === 'O') ? 'X' : 'O';
+    };
+
     for (let i = 0; i < 3; i++) {
       const $tr = document.createElement('tr');
       const cells = [];
       for (let j = 0; j < 3; j++) {
         const $td = document.createElement('td');
         cells.push($td);
-        $td.addEventListener('click', (event) => {
-          if (event.target.textContent) return;
-          event.target.textContent = turn;
-          if (turn === 'O') {
-            turn = 'X';
-          } else if (turn === 'X') {
-            turn = 'O';
-          } 
-        });
+        $td.addEventListener('click', callback);
         $tr.append($td);
       }
+      rows.push(cells);
       $table.append($tr);
-    }
+    }; 
     body.append($table);
     body.append($result);
   </script>
