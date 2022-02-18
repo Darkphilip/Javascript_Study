@@ -28,6 +28,14 @@
       </form>
     </div>
   </div>
+
+  <script>
+    $('.black-background').click(function(e) {
+      if (e.target === this) {
+        $('.black-background').hide()
+      } 
+    })
+  </script>
   
   <div class="Modal">
     <div class="modal-content">Content</div>
@@ -66,9 +74,14 @@
     <hr class="my-4">
     <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. </p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <a class="btn btn-primary btn-lg" href="#" role="button" id="modal-btn">Learn more</a>
   </div>  
   <input id="test-input">
+  <script>
+    $('#modal-btn').click(function() {
+      $('.black-background').slideDown();
+    })
+  </script>
 
   <h4 class="my-4 text-center">Showcase</h4>
   <div style="overflow: hidden; position:relative;">
@@ -132,9 +145,9 @@
   
   <div class="container mt-5">
     <ul class="list">
-      <li class="tab-button">Products</li>
-      <li class="tab-button">Information</li>
-      <li class="tab-button">Shipping</li>
+      <li class="tab-button" data-id="0">Products</li>
+      <li class="tab-button" data-id="1">Information</li>
+      <li class="tab-button" data-id="2">Shipping</li>
     </ul>
   
     <div class="tab-content">
