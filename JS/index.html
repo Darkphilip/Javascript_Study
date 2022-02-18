@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="main.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <h4 id="test">안녕하세요</h4>
+  <button class="btn">BTN</button>
+  <script>
+    $('#test').html('안녕');
+    $('#test').css('color', 'red');
+    $('#test').addClass('yellow-bg');
+    $('.btn').on('click', function() {
+      $('#test').slideUp();
+    })
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

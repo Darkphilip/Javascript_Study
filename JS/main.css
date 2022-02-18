@@ -1,0 +1,132 @@
+.alert-box {
+  background: skyblue;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  display: block;
+}
+
+.yellow-bg {
+  background: lightyellow;
+}
+
+.jumbotron {
+  padding: 30px;
+}
+
+.black-background {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.white-background {
+  background: white;
+  width: 80%;
+  margin: 100px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}
+.nav-black {
+  background: black;
+  color: white;
+}
+
+.nav-sub {
+  display: none;
+}
+.large-logo {
+  font-size: 30px;
+  transition: all 0.5s;
+}
+.small-logo {
+  font-size: 22px;
+}
+.main-background {
+  padding: 70px;
+  background-image: url(./image/back.jpg);
+  background-size: cover;
+  color: white;
+}
+
+#nav-sub-btn {
+  cursor: pointer;
+}
+
+#email-alert {
+  display: none;
+}
+#pw-alert {
+  display: none;
+}
+
+.side-menu {
+  width: 150px;
+  height: 100%;
+  background: skyblue;
+  color: white;
+  position: fixed;
+  margin-left: -150px;
+}
+
+.Modal {
+  width: 400px;
+  height: 400px;
+  background: grey;
+  position: fixed;
+  margin-top: -400px ;
+  text-align: center;
+  padding: 50px;
+}
+
+.modal-content {
+  width: 50%;
+  height: 50%;
+  background: white;
+  margin: auto;
+}
+
+.slide-container {
+  width: 300vw;
+  transition: transform 1s;
+}
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+img {
+  width: 100%;
+}
+button {
+  border: none;
+  background: lightsalmon;
+  border-radius: 10px;
+  padding: 10px;
+}
+.next-btn {
+  position: absolute;
+  top: 45%;
+  right: 10px;
+}
+
+.prev-btn {
+  position: absolute;
+  top: 45%;
+  left: 10px;
+}
